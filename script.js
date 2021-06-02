@@ -136,19 +136,15 @@ let btns = document.body.querySelectorAll('button');
 
 
 const container = document.querySelector('.container');
-let chosenBlock = null;
+
+console.log(container.children)
 
 container.addEventListener('click', (e) => {
+    [...container.children].forEach(elem => {
+        elem.classList.remove('green')
+    })
     if (e.target.classList.contains('block')) {
-        if (!chosenBlock) {
-            chosenBlock = e.target;
-            e.target.classList.add('green');
-        } else {
-            e.target.classList.add('green');
-            chosenBlock.classList.remove('green');
-            chosenBlock = e.target;
-            console.log(chosenBlock)
-        }
+        e.target.classList.add('green')
     }
 })
 
