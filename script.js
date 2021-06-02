@@ -135,19 +135,34 @@ let btns = document.body.querySelectorAll('button');
 // }, 4000);
 
 
-const container = document.querySelector('.container');
+// const container = document.querySelector('.container');
 
-console.log(container.children)
+// console.log(container.children)
 
-container.addEventListener('click', (e) => {
-    [...container.children].forEach(elem => {
-        elem.classList.remove('green')
-    })
-    if (e.target.classList.contains('block')) {
-        e.target.classList.add('green')
-    }
-})
+// container.addEventListener('click', (e) => {
+//     [...container.children].forEach(elem => {
+//         elem.classList.remove('green')
+//     })
+//     if (e.target.classList.contains('block')) {
+//         e.target.classList.add('green')
+//     }
+// })
 
+
+upper.addEventListener('click', (e) => {
+    console.log('upper');
+    e.stopPropagation()
+}, true);
+middle.addEventListener('click', (e) => {
+    console.log('middle');
+    // e.stopPropagation()
+}, false);
+internal.addEventListener('click', (e) => {
+  
+    middle.style.border = '10px yellow solid'
+    // e.stopPropagation()
+    console.log('internal')
+}, false);
 
 
 
